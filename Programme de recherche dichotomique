@@ -1,0 +1,29 @@
+from random import*
+
+L = []
+for i in range(1000):
+    L. append( randint(0, 100) )
+elt=randint(0,100)
+print(L)
+print(elt)
+
+
+def rechercheDicho(L:list,elt:int)-> int:
+    deb=0
+    fin=len(L)-1
+    tr=False
+    compteur=0
+    while tr==False and deb<=fin:
+        mil=int((deb+fin)//2)
+        if L[mil]==elt:
+            tr=True
+        elif elt>L[mil]:
+            deb=mil+1
+        else:
+            fin=mil-1
+        compteur=compteur+1
+    if tr==False:
+        return -1
+    else:
+        return compteur
+print(rechercheDicho(L,elt))
